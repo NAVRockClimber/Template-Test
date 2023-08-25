@@ -1,0 +1,17 @@
+name: Central Demo Workflow
+
+on:
+  workflow_call:
+    inputs:
+      greet-name:
+        required: true
+        type: string
+  
+jobs:
+  common-demo:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v3
+    - run: echo "🎉 This job is from the central template repository."
+    - run: echo "Hallo ${{ inputs.greet-name }}. 🚀"
